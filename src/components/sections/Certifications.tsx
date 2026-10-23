@@ -2,6 +2,7 @@
 import { SmartImage } from "@/components/ui/SmartImage";
 import { EmptyNote, SectionTitle } from "@/components/ui/SectionTitle";
 import { content } from "@/data/portfolio";
+import { assetPath } from "@/lib/site";
 import { panel, secondaryButton } from "@/lib/styles";
 import { cn, hasText } from "@/lib/utils";
 
@@ -48,7 +49,7 @@ export function Certifications() {
                       />
                     </div>
                     <a
-                      href={item.image}
+                      href={assetPath(item.image)}
                       target="_blank"
                       rel="noreferrer noopener"
                       className={cn(secondaryButton, "mt-4")}

@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { content } from "@/data/portfolio";
-import { getSiteUrl } from "@/lib/site";
+import { getMetadataBase, getSiteUrl } from "@/lib/site";
 import { themeInitScript } from "@/lib/theme";
 import { hasText } from "@/lib/utils";
 import "./globals.css";
@@ -20,7 +20,7 @@ const manrope = Manrope({
 const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: getMetadataBase(),
   title: {
     default: content.metaTitle,
     template: `%s — ${content.profile.fullName}`,

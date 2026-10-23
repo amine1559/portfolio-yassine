@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { Icon } from "@/components/ui/Icon";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { content } from "@/data/portfolio";
+import { assetPath } from "@/lib/site";
 import { primaryButton, secondaryButton } from "@/lib/styles";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +17,7 @@ function hashHref(hash: string) {
 function CvAction({ className }: { className?: string }) {
   if (content.cv.available) {
     return (
-      <a href={content.cv.href} download className={cn(primaryButton, className)}>
+      <a href={assetPath(content.cv.href)} download className={cn(primaryButton, className)}>
         <Icon name="download" className="h-4 w-4" />
         {content.cv.label}
       </a>

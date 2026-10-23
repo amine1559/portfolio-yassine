@@ -2,12 +2,14 @@
 import { content } from "@/data/portfolio";
 import { getSiteUrl } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = getSiteUrl();
+  const base = getSiteUrl().replace(/\/$/, "");
 
   return [
     {
-      url: base,
+      url: `${base}/`,
       changeFrequency: "monthly",
       priority: 1,
     },

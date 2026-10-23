@@ -12,10 +12,7 @@ const nextConfig: NextConfig = {
         trailingSlash: true,
         images: { unoptimized: true },
       }
-    : {
-        cacheComponents: true,
-        partialPrefetching: true,
-      }),
+    : {}),
   turbopack: {
     root: path.join(process.cwd()),
     rules: {
